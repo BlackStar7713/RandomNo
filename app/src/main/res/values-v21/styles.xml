@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorButtonNormal">@color/colorAccent</item>
+        <item name="android:actionOverflowButtonStyle">@style/OverFlowLight</item>
+        <item name="android:textColorSecondary">@color/materialBlack</item>
+    </style>
+
+    <style name="AppThemeDrk" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorButtonNormal">@color/colorAccent</item>
+        <item name="android:actionOverflowButtonStyle">@style/OverFlowLight</item>
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
+
+    <style name="OverFlowLight" parent="@android:style/Widget.Material.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_more_vert_white_24dp</item>
+    </style>
+
+    <style name="tolbr">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:elevation">@dimen/elevation</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="tablyt">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:elevation">@dimen/elevation</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+</resources>

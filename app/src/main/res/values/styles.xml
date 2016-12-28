@@ -1,0 +1,139 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:actionOverflowButtonStyle">@style/OverFlowLight</item>
+        <item name="android:textColorSecondary">@color/materialBlack</item>
+    </style>
+
+    <style name="AppThemeDrk" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:actionOverflowButtonStyle">@style/OverFlowLight</item>
+        <item name="android:textColorSecondary">@color/white</item>
+    </style>
+
+    <style name="OverFlowLight" parent="@android:style/Widget.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_more_vert_white_24dp</item>
+    </style>
+
+    <style name="randonNo">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/randomTextSize</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">@string/na</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginBottom">@dimen/marginBottom</item>
+    </style>
+
+    <style name="input">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:inputType">number|numberSigned</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:maxLength">9</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="horizontalLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_marginBottom">@dimen/marginBottom</item>
+    </style>
+
+    <style name="horizontalLayoutNoMargin">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="btn">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/buttonHeight</item>
+        <item name="android:textSize">@dimen/buttonTextSize</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="heading">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/buttonTextSize</item>
+        <item name="android:layout_marginBottom">@dimen/marginBottom</item>
+    </style>
+
+    <style name="dice">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:layout_marginBottom">@dimen/diceMargin</item>
+    </style>
+
+    <style name="coin">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:layout_margin">@dimen/diceMargin</item>
+    </style>
+
+    <style name="dropdown">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="diceNo">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">@dimen/buttonTextSize</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="spinner">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/buttonTextSize</item>
+        <item name="android:gravity">right</item>
+    </style>
+
+    <style name="normal">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="view">
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:background">@color/materialBlack</item>
+    </style>
+
+    <style name="chkb">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="tolbr">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="tablyt">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="vpgr">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+</resources>

@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Random No</string>
+    <string name="na">0</string>
+    <string name="ll">From</string>
+    <string name="ul">To</string>
+    <string name="gen">GENERATE</string>
+    <string name="rst">RESET</string>
+    <string name="fedbck">Send Feedback</string>
+    <string name="elmt">Enter Lower Limit</string>
+    <string name="eult">Enter Upper Limit</string>
+    <string name="lowerLarger">Lower Limit cannot be larger than Upper Limit</string>
+    <string name="upperOutOfBound">Upper Limit cannot be greater than 2147483647</string>
+    <string name="lowerOutOfBound">LowerLimit cannot be smaller than 0</string>
+    <string name="flp">Flip A Coin</string>
+    <string name="nod">NO OF DICE</string>
+    <string name="rol">ROLL</string>
+    <string name="count">Quantity of Random Numbers</string>
+    <string name="nore">Non-Repeating</string>
+    <string name="srt">Sorted</string>
+    <string name="dark">Dark Mode</string>
+    <string name="drkof">Off</string>
+    <string name="drkon">On</string>
+    <string name="thm">Theme</string>
+    <string name="set">Settings</string>
+    <string name="qty">Quantity</string>
+    <string name="qtyrg">Please enter quantity upto 100 only</string>
+    <string name="qtyz">Please enter atleast 1 for quantity</string>
+    <string-array name="nonwr">
+        <item>Its impossible to have </item>
+        <item>distinct random no between</item>
+        <item>and</item>
+    </string-array>
+    <string-array name="diceNo">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+</resources>
