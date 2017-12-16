@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2017 nsnikhil
+  ~
+  ~    Licensed under the Apache License, Version 2.0 (the "License");
+  ~    you may not use this file except in compliance with the License.
+  ~    You may obtain a copy of the License at
+  ~
+  ~        http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~    Unless required by applicable law or agreed to in writing, software
+  ~    distributed under the License is distributed on an "AS IS" BASIS,
+  ~    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~    See the License for the specific language governing permissions and
+  ~    limitations under the License.
+  -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_random"
+    style="@style/matchParent">
+
+    <android.support.constraint.ConstraintLayout style="@style/matchParent">
+
+        <TextView
+            android:id="@+id/randomNumber"
+            style="@style/randomNumberText" />
+
+        <EditText
+            android:id="@+id/randomLowerLimit"
+            style="@style/randomNumberRangeInputField"
+            android:layout_width="0dp"
+            android:hint="@string/randomLowerLimitHint"
+            app:layout_constraintEnd_toStartOf="@+id/randomUpperLimit"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/randomNumber" />
+
+        <EditText
+            android:id="@+id/randomUpperLimit"
+            style="@style/randomNumberRangeInputField"
+            android:layout_width="0dp"
+            android:hint="@string/randomUpperLimitHint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/randomLowerLimit"
+            app:layout_constraintTop_toBottomOf="@id/randomNumber" />
+
+
+        <Button
+            android:id="@+id/randomGenerateRandomNumber"
+            style="@style/button"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/buttonHeight"
+            android:text="@string/randomGenerateRandomNumber"
+            app:layout_constraintEnd_toStartOf="@+id/randomResetFields"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/randomUpperLimit" />
+
+        <Button
+            android:id="@+id/randomResetFields"
+            style="@style/button"
+            android:layout_width="0dp"
+            android:text="@string/randomResetFields"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/randomGenerateRandomNumber"
+            app:layout_constraintTop_toBottomOf="@id/randomUpperLimit" />
+
+        <EditText
+            android:id="@+id/randomNumberQuantity"
+            style="@style/randomNumberRangeInputField"
+            android:hint="@string/randomQuantityOfNumbers"
+            android:maxLength="3"
+            app:layout_constraintTop_toBottomOf="@id/randomResetFields" />
+
+        <CheckBox
+            android:id="@+id/randomNonRepeatingFlag"
+            style="@style/wrapContent"
+            android:text="@string/randomGenerateNonRepeatingFlag"
+            app:layout_constraintTop_toBottomOf="@id/randomNumberQuantity" />
+
+        <CheckBox
+            android:id="@+id/randomSortedFlag"
+            style="@style/wrapContent"
+            android:text="@string/randomGenerateSortedFlag"
+            app:layout_constraintTop_toBottomOf="@id/randomNonRepeatingFlag" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

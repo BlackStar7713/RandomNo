@@ -1,31 +1,169 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.1"
+    compileSdkVersion 27
+    buildToolsVersion rootProject.buildToolsVersion
     defaultConfig {
         applicationId "com.nexus.nsnik.randomno"
-        minSdkVersion 19
-        targetSdkVersion 24
+        minSdkVersion 24
+        targetSdkVersion 27
         versionCode 8
         versionName "2.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        /*splits {
+            abi {
+                enable true
+                reset()
+                include "x86_64", "x86", "armeabi", "armeabi-v7a", "arm64-v8a", "mips"
+                universalApk false
+            }
+            density {
+                enable true
+                reset()
+                include "ldpi", "mdpi", "hdpi", "xhdpi", "xxhdpi", "xxxhdpi"
+            }
+        }*/
+    }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
     }
     buildTypes {
+        debug {
+            //applicationIdSuffix '.debug'
+            //versionNameSuffix '-DEBUG'
+            //ext.alwaysUpdateBuildId = false
+        }
         release {
-            minifyEnabled false
+            shrinkResources true
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    if (project.hasProperty('devBuild')) {
+        splits.density.enable = false
+        splits.abi.enable = false
+        aaptOptions {
+            cruncherEnabled = false
+        }
+    }
+    allprojects {
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation" << "-Xlint:cast" << "-Xlint:empty"
+        }
+    }
+    testOptions {
+        execution 'ANDROID_TEST_ORCHESTRATOR'
+    }
 }
 
+/*
+ * Copyright 2017 nsnikhil
+ *
+ *    Licensed under the Apache License, Version 2.0 (the "License");
+ *    you may not use this file except in compliance with the License.
+ *    You may obtain a copy of the License at
+ *
+ *        http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *    Unless required by applicable law or agreed to in writing, software
+ *    distributed under the License is distributed on an "AS IS" BASIS,
+ *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *    See the License for the specific language governing permissions and
+ *    limitations under the License.
+ */
+
+/*ext.abiCodes = ['armeabi': 3, 'armeabi-v7a': 4, 'arm64-v8a': 5, mips: 6, 'x86': 7, 'x86_64': 8]
+ext.densityCodes = ['ldpi': 3, 'mdpi': 4, 'hdpi': 5, 'xhdpi': 6, 'xxhdpi': 7, 'xxxhdpi': 8]
+import com.android.build.OutputFile
+
+android.applicationVariants.all { variant ->
+    variant.outputs.each { output ->
+        def baseAbiVersionCode = project.ext.abiCodes.get(output.getFilter(OutputFile.ABI))
+        def baseDensityVersionCode = project.ext.densityCodes.get(output.getFilter(OutputFile.DENSITY))
+        if (baseAbiVersionCode != null && baseDensityVersionCode != null) {
+            output.versionCodeOverride = baseAbiVersionCode * 1000 + baseDensityVersionCode * 1000 + variant.versionCode
+        }
+    }
+}*/
+
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    compile 'com.android.support:appcompat-v7:24.2.1'
-    compile 'com.android.support:support-v4:24.2.1'
-    compile 'com.android.support:design:24.2.1'
-    testCompile 'junit:junit:4.12'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //APPCOMPAT LIBRARY
+    implementation "com.android.support:appcompat-v7:$rootProject.supportLibVersion"
+
+    //RECYCLER VIEW
+    implementation "com.android.support:recyclerview-v7:$rootProject.supportLibVersion"
+
+    //ANNOTATION SUPPORT LIBRARY
+    implementation "com.android.support:support-annotations:$rootProject.supportLibVersion"
+
+    //DESIGN SUPPORT LIBRARY
+    implementation "com.android.support:design:$rootProject.supportLibVersion"
+
+    //CONSTRAINT LAYOUT
+    implementation "com.android.support.constraint:constraint-layout:$rootProject.constraintLayoutVersion"
+
+    //RX JAVA & ANDROID
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroidVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxJavaVersion"
+
+    //RX BINDING
+    implementation "com.jakewharton.rxbinding2:rxbinding:$rootProject.rxBindingVersion"
+    implementation "com.jakewharton.rxbinding2:rxbinding-support-v4:$rootProject.rxBindingVersion"
+    implementation "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:$rootProject.rxBindingVersion"
+    implementation "com.jakewharton.rxbinding2:rxbinding-design:$rootProject.rxBindingVersion"
+    implementation "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:$rootProject.rxBindingVersion"
+
+    //TIMBER LOGGER
+    implementation "com.jakewharton.timber:timber:$rootProject.timberVersion"
+
+    //BUTTER KNIFE
+    implementation "com.jakewharton:butterknife:$rootProject.butterKnifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterKnifeVersion"
+
+    //LEAK CANARY
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$rootProject.leakCanaryVersion"
+    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$rootProject.leakCanaryVersion"
+
+    //LIFE CYCLE EXTENSIONS
+    implementation "android.arch.lifecycle:extensions:$rootProject.architectureComponentVersion"
+
+    //LIFE CYCLE JAVA 8
+    implementation "android.arch.lifecycle:common-java8:$rootProject.architectureComponentVersion"
+
+    //LIVE DATA BACKGROUND TEST
+    testImplementation "android.arch.core:core-testing:$rootProject.architectureComponentVersion"
+
+    //LIVE DATA WITH REACTIVE STREAMS
+    implementation "android.arch.lifecycle:reactivestreams:$rootProject.architectureComponentVersion"
+
+    //MOCKITO
+    testImplementation "org.mockito:mockito-core:$rootProject.mockitoVersion"
+
+    //JETBRAINS ANNOTATION
+    implementation "org.jetbrains:annotations:$rootProject.jetBrainsAnnotationVersion"
+
+    //JUNIT 4
+    testImplementation "junit:junit:$rootProject.jUnitVersion"
+
+    //ANDROID JUNIT RUNNER AND JUNIT RULES
+    androidTestImplementation "com.android.support.test:runner:$rootProject.runnerVersion"
+    androidTestImplementation "com.android.support.test:rules:$rootProject.rulesVersion"
+    androidTestUtil "com.android.support.test:orchestrator:$rootProject.orchestratorVersion"
+
+    //ESPRESSO
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$rootProject.espressoVersion"
+    androidTestImplementation "com.android.support.test.espresso:espresso-contrib:$rootProject.espressoVersion"
+    androidTestImplementation "com.android.support.test.espresso:espresso-intents:$rootProject.espressoVersion"
+    androidTestImplementation "com.android.support.test.espresso.idling:idling-concurrent:$rootProject.espressoVersion"
+    //androidTestImplementation "com.android.support.test.espresso:espresso-accessibility:$rootProject.espressoVersion"
+    implementation "com.android.support.test.espresso:espresso-idling-resource:$rootProject.espressoVersion"
+
+    //ROBO-ELECTRIC
+    testImplementation "org.robolectric:robolectric:$rootProject.roboElectricVersion"
 }

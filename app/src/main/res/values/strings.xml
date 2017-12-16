@@ -1,41 +1,64 @@
+<!--
+  ~ Copyright 2017 nsnikhil
+  ~
+  ~    Licensed under the Apache License, Version 2.0 (the "License");
+  ~    you may not use this file except in compliance with the License.
+  ~    You may obtain a copy of the License at
+  ~
+  ~        http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~    Unless required by applicable law or agreed to in writing, software
+  ~    distributed under the License is distributed on an "AS IS" BASIS,
+  ~    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~    See the License for the specific language governing permissions and
+  ~    limitations under the License.
+  -->
+
 <resources>
     <string name="app_name">Random No</string>
-    <string name="na">0</string>
-    <string name="ll">From</string>
-    <string name="ul">To</string>
-    <string name="gen">GENERATE</string>
-    <string name="rst">RESET</string>
-    <string name="fedbck">Send Feedback</string>
-    <string name="elmt">Enter Lower Limit</string>
-    <string name="eult">Enter Upper Limit</string>
-    <string name="lowerLarger">Lower Limit cannot be larger than Upper Limit</string>
-    <string name="upperOutOfBound">Upper Limit cannot be greater than 2147483647</string>
-    <string name="lowerOutOfBound">LowerLimit cannot be smaller than 0</string>
-    <string name="flp">Flip A Coin</string>
-    <string name="nod">NO OF DICE</string>
-    <string name="rol">ROLL</string>
-    <string name="count">Quantity of Random Numbers</string>
-    <string name="nore">Non-Repeating</string>
-    <string name="srt">Sorted</string>
-    <string name="dark">Dark Mode</string>
-    <string name="drkof">Off</string>
-    <string name="drkon">On</string>
-    <string name="thm">Theme</string>
-    <string name="set">Settings</string>
-    <string name="qty">Quantity</string>
-    <string name="qtyrg">Please enter quantity upto 100 only</string>
-    <string name="qtyz">Please enter atleast 1 for quantity</string>
-    <string-array name="nonwr">
-        <item>Its impossible to have </item>
+    <string name="developerEmailAddress" translatable="false">n.nikhil.ns65@gmail.com</string>
+    <string name="emailSubject">Feedback for random number generator app</string>
+
+    <!-- menu-->
+    <string name="menuSettings">Settings</string>
+    <string name="menuSendFeedback">Send Feedback</string>
+    <!-- menu-->
+
+    <!--  randomNumber-->
+    <string name="randomNumberStart">X</string>
+    <string name="randomLowerLimitHint">From</string>
+    <string name="randomUpperLimitHint">To</string>
+    <string name="randomGenerateRandomNumber">GENERATE</string>
+    <string name="randomResetFields">RESET</string>
+    <string name="randomQuantityOfNumbers">Quantity of Random Numbers</string>
+    <string name="randomGenerateNonRepeatingFlag">Non-Repeating</string>
+    <string name="randomGenerateSortedFlag">Sorted</string>
+
+    <string-array name="randomErrorMoreDistinctThanQuantity">
+        <item>Its impossible to have</item>
         <item>distinct random no between</item>
         <item>and</item>
     </string-array>
-    <string-array name="diceNo">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-    </string-array>
+
+    <string name="randomErrorNoLimit">Specify a range</string>
+    <string name="randomErrorLowerLimitOutOfRange">Lower limit out of range</string>
+    <string name="randomErrorUpperLimitOutOfRange">Upper limit out of range</string>
+    <string name="randomErrorLowerLimitGreaterThanUpper">Lower limit cannot be greater than upper</string>
+    <string name="randomErrorQuantityOutOfRange">Quantity should be between 1 – 100</string>
+
+    <!-- randomNumber-->
+
+    <!-- coinToss-->
+    <string name="coinHeads">HEADS</string>
+    <string name="coinTails">TAILS</string>
+    <string name="coinFlip">FLIP</string>
+    <!-- -->
+
+    <!-- rollDice-->
+    <string name="rollDice">Roll</string>
+    <string name="rollDiceQuantityHint">No of dice</string>
+
+    <string name="rollErrorQuantityOutOfRange">Quantity should be between 1 – 100</string>
+    <!-- -->
+
 </resources>

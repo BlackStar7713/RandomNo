@@ -15,3 +15,36 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+-assumenosideeffects class timber.log.Timber {
+ public static *** d(...);
+ public static *** i(...);
+ public static *** v(...);
+}
+
+-keep class butterknife.** { *; }
+-dontwarn butterknife.internal.**
+-keep class **$$ViewBinder { *; }
+
+-keepclasseswithmembernames class * {
+    @butterknife.* <fields>;
+}
+
+-keepclasseswithmembernames class * {
+    @butterknife.* <methods>;
+}
+
+-dontwarn com.google.errorprone.annotations.*
+
+-keep class * implements android.arch.lifecycle.GeneratedAdapter {<init>(...);}
+
+-keepclasseswithmembers class * implements android.arch.lifecycle.GenericLifecycleObserver {
+<init>(...);
+}
+-keepclassmembers class android.arch.lifecycle.Lifecycle$* { *; }
+-keepclassmembers class * {
+    @android.arch.lifecycle.OnLifecycleEvent *;
+}
+-keepclassmembers class * extends android.arch.lifecycle.ViewModel {
+<init>(...);
+}

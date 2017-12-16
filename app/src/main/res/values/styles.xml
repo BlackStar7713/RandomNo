@@ -1,139 +1,100 @@
+<!--
+  ~ Copyright 2017 nsnikhil
+  ~
+  ~    Licensed under the Apache License, Version 2.0 (the "License");
+  ~    you may not use this file except in compliance with the License.
+  ~    You may obtain a copy of the License at
+  ~
+  ~        http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~    Unless required by applicable law or agreed to in writing, software
+  ~    distributed under the License is distributed on an "AS IS" BASIS,
+  ~    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~    See the License for the specific language governing permissions and
+  ~    limitations under the License.
+  -->
+
 <resources>
 
+    <!-- APP-->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:actionOverflowButtonStyle">@style/OverFlowLight</item>
         <item name="android:textColorSecondary">@color/materialBlack</item>
     </style>
 
-    <style name="AppThemeDrk" parent="Theme.AppCompat.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:actionOverflowButtonStyle">@style/OverFlowLight</item>
-        <item name="android:textColorSecondary">@color/white</item>
-    </style>
-
-    <style name="OverFlowLight" parent="@android:style/Widget.ActionButton.Overflow">
-        <item name="android:src">@drawable/ic_more_vert_white_24dp</item>
-    </style>
-
-    <style name="randonNo">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textAllCaps">true</item>
-        <item name="android:textAlignment">center</item>
-        <item name="android:textSize">@dimen/randomTextSize</item>
-        <item name="android:gravity">center</item>
-        <item name="android:text">@string/na</item>
-        <item name="android:textStyle">bold</item>
-        <item name="android:layout_marginBottom">@dimen/marginBottom</item>
-    </style>
-
-    <style name="input">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:inputType">number|numberSigned</item>
-        <item name="android:textAlignment">center</item>
-        <item name="android:maxLength">9</item>
-        <item name="android:layout_weight">1</item>
-    </style>
-
-    <style name="horizontalLayout">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:orientation">horizontal</item>
-        <item name="android:layout_marginBottom">@dimen/marginBottom</item>
-    </style>
-
-    <style name="horizontalLayoutNoMargin">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:orientation">horizontal</item>
-    </style>
-
-    <style name="btn">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/buttonHeight</item>
-        <item name="android:textSize">@dimen/buttonTextSize</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:textAllCaps">true</item>
-    </style>
-
-    <style name="heading">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">@dimen/buttonTextSize</item>
-        <item name="android:layout_marginBottom">@dimen/marginBottom</item>
-    </style>
-
-    <style name="dice">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:visibility">gone</item>
-        <item name="android:layout_marginBottom">@dimen/diceMargin</item>
-    </style>
-
-    <style name="coin">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:visibility">gone</item>
-        <item name="android:layout_margin">@dimen/diceMargin</item>
-    </style>
-
-    <style name="dropdown">
+    <style name="stretchedHorizontally">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
 
-    <style name="diceNo">
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:textSize">@dimen/buttonTextSize</item>
-        <item name="android:textAllCaps">true</item>
-    </style>
-
-    <style name="spinner">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">@dimen/buttonTextSize</item>
-        <item name="android:gravity">right</item>
-    </style>
-
-    <style name="normal">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textAllCaps">true</item>
-    </style>
-
-    <style name="view">
-        <item name="android:layout_height">1dp</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:background">@color/materialBlack</item>
-    </style>
-
-    <style name="chkb">
+    <style name="wrapContent">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
 
-    <style name="tolbr">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@color/colorPrimary</item>
-    </style>
-
-    <style name="tablyt">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@color/colorPrimary</item>
-    </style>
-
-    <style name="vpgr">
+    <style name="matchParent">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
     </style>
+
+    <style name="button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/buttonHeight</item>
+        <item name="android:textSize">@dimen/buttonTextSize</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:colorButtonNormal">@color/colorPrimary</item>
+        <item name="android:colorControlHighlight">@color/colorAccent</item>
+    </style>
+
+    <!-- APP-->
+
+    <!-- Coin Toss Fragment-->
+
+    <style name="coinImage" parent="wrapContent">
+        <item name="android:minHeight">200dp</item>
+        <item name="android:minWidth">200dp</item>
+        <item name="android:maxHeight">400dp</item>
+        <item name="android:maxWidth">400dp</item>
+        <item name="android:src">@drawable/circle</item>
+    </style>
+
+    <style name="coinText" parent="wrapContent">
+        <item name="android:textSize">48sp</item>
+        <item name="android:textColor">@color/materialWhite</item>
+        <item name="android:text">@string/coinFlip</item>
+    </style>
+
+    <!-- Coin Toss Fragment-->
+
+    <!-- Random Number Fragment -->
+
+    <style name="randomNumberText" parent="stretchedHorizontally">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/randomTextSize</item>
+        <item name="android:text">@string/randomNumberStart</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="randomNumberRangeInputField" parent="stretchedHorizontally">
+        <item name="android:inputType">number|numberSigned</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:maxLength">9</item>
+    </style>
+
+    <!-- -->
+
+    <style name="toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:elevation">@dimen/elevation</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="splashTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+
 </resources>
