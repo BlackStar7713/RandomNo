@@ -35,7 +35,7 @@ public class RollDiceViewModel extends ViewModel {
 
     private MutableLiveData<List<Integer>> mDiceList;
 
-    RollDiceViewModel() {
+    public RollDiceViewModel() {
         mDiceList = new MutableLiveData<>();
     }
 

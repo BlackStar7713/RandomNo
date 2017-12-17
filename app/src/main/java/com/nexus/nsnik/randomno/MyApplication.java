@@ -25,6 +25,9 @@ import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatDelegate;
 
+import com.github.moduth.blockcanary.BlockCanary;
+import com.nexus.nsnik.randomno.util.AppBlockCanaryContext;
+import com.rollbar.android.Rollbar;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
@@ -66,12 +69,15 @@ public class MyApplication extends Application {
                     .build());
         }
         if (LeakCanary.isInAnalyzerProcess(this)) {
+            return;
         }
+        BlockCanary.install(this, new AppBlockCanaryContext()).start();
+        Rollbar.init(this, "792def9ca5ba4d7cb5709adde437c844", "production");
     }
 
     private void setTheme() {
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        String mode = sharedPreferences.getString(getResources().getString(R.string.prefDarkModeKey), "Default");
+        String mode = sharedPreferences.getString(getResources().getString(R.string.prefDarkModeKey), "Off");
         switch (mode) {
             case "On":
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);

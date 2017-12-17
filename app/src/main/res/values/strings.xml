@@ -40,6 +40,7 @@
 
     <!-- menu-->
     <string name="menuSettings">Settings</string>
+    <string name="menuAbout">About</string>
     <string name="menuSendFeedback">Send Feedback</string>
     <!-- menu-->
 
@@ -78,6 +79,16 @@
     <string name="rollDiceQuantityHint">No of dice</string>
 
     <string name="rollErrorQuantityOutOfRange">Quantity should be between 1 – 100</string>
-    <!-- -->
+
+    <!-- aboutStrings-->
+    <string name="aboutApplication">A simple random number generator application with extra functionality.</string>
+    <string name="aboutNikhil" translatable="false">Random Number Generator is written by Nikhil Soni\n
+                   <a href="https://twitter.com/imnsnik">Twitter</a>|<a href="https://github.com/nsnikhil/">Github</a> </string>
+    <string name="aboutSourceCode" translatable="false">The source code is available on <a href="https://github.com/nsnikhil/RandomNo">Github</a></string>
+
+    <string name="aboutLibraries">Third party library used</string>
+    <string name="aboutLibrariesHead">Random Number Generator is built with the help of these great libraries</string>
+    <string name="aboutLicense">License Info</string>
+    <string name="aboutLicenseUrl" translatable="false">https://github.com/nsnikhil/RandomNo/blob/master/LICENSE</string>
 
 </resources>

@@ -1,4 +1,7 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'io.fabric'
 
 android {
     compileSdkVersion 27
@@ -93,6 +96,11 @@ android.applicationVariants.all { variant ->
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    //CRASHLYTICS
+    implementation('com.crashlytics.sdk.android:crashlytics:2.7.1@aar') {
+        transitive = true
+    }
+
     //APPCOMPAT LIBRARY
     implementation "com.android.support:appcompat-v7:$rootProject.supportLibVersion"
 
@@ -107,6 +115,9 @@ dependencies {
 
     //CONSTRAINT LAYOUT
     implementation "com.android.support.constraint:constraint-layout:$rootProject.constraintLayoutVersion"
+
+    //FIRE BASE
+    implementation "com.google.firebase:firebase-core:$rootProject.fireBaseVersion"
 
     //RX JAVA & ANDROID
     implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroidVersion"
@@ -148,6 +159,16 @@ dependencies {
     //JETBRAINS ANNOTATION
     implementation "org.jetbrains:annotations:$rootProject.jetBrainsAnnotationVersion"
 
+    //ROLL-BAR
+    implementation "com.rollbar:rollbar-android:$rootProject.rollBarVersion"
+
+    //BLOCK CANARY
+    implementation "com.github.markzhai:blockcanary-android:$rootProject.blockCanaryVersion"
+
+    //AUTO VALUE
+    compileOnly "com.google.auto.value:auto-value:$rootProject.autoValueVersion"
+    annotationProcessor "com.google.auto.value:auto-value:$rootProject.autoValueVersion"
+
     //JUNIT 4
     testImplementation "junit:junit:$rootProject.jUnitVersion"
 
@@ -167,3 +188,5 @@ dependencies {
     //ROBO-ELECTRIC
     testImplementation "org.robolectric:robolectric:$rootProject.roboElectricVersion"
 }
+
+apply plugin: 'com.google.gms.google-services'

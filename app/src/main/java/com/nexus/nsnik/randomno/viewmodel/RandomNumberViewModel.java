@@ -36,7 +36,7 @@ public class RandomNumberViewModel extends ViewModel {
 
     private MutableLiveData<List<Integer>> mRandomNumberList;
 
-    RandomNumberViewModel() {
+    public RandomNumberViewModel() {
         mRandomNumberList = new MutableLiveData<>();
     }
 

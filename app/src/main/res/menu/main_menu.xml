@@ -16,9 +16,12 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/menu_settings"
+        android:id="@+id/menuSettings"
         android:title="@string/menuSettings" />
     <item
-        android:id="@+id/menu_feedback"
+        android:id="@+id/menuAbout"
+        android:title="@string/menuAbout" />
+    <item
+        android:id="@+id/menuFeedback"
         android:title="@string/menuSendFeedback" />
 </menu>

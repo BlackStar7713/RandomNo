@@ -17,6 +17,7 @@
 package com.nexus.nsnik.randomno.view;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -27,6 +28,7 @@ import android.view.MenuItem;
 
 import com.nexus.nsnik.randomno.R;
 import com.nexus.nsnik.randomno.view.adapters.ViewPagerAdapter;
+import com.nexus.nsnik.randomno.view.fragments.dailogFragments.AboutDialogFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -66,17 +68,19 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int menuItemId = item.getItemId();
         switch (menuItemId) {
-            case R.id.menu_settings:
+            case R.id.menuSettings:
                 startActivityForResult(new Intent(MainActivity.this, PreferenceActivity.class), PREFERENCE_REQUEST_CODE);
                 break;
-            case R.id.menu_feedback:
-                Intent sentEmail = new Intent(Intent.ACTION_SEND);
-                sentEmail.setType("text/plain");
+            case R.id.menuAbout:
+                new AboutDialogFragment().show(getSupportFragmentManager(), "AboutDialog");
+                break;
+            case R.id.menuFeedback:
+                Intent sentEmail = new Intent(Intent.ACTION_SENDTO);
+                sentEmail.setData(Uri.parse("mailto:"));
                 sentEmail.putExtra(Intent.EXTRA_EMAIL, getResources().getString(R.string.developerEmailAddress));
                 sentEmail.putExtra(Intent.EXTRA_SUBJECT, getResources().getString(R.string.emailSubject));
-                if (sentEmail.resolveActivity(getPackageManager()) != null) {
+                if (sentEmail.resolveActivity(getPackageManager()) != null)
                     startActivity(sentEmail);
-                }
                 break;
         }
         return true;

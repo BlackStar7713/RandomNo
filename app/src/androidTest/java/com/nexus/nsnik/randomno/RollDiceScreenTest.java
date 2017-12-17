@@ -16,33 +16,45 @@
 
 package com.nexus.nsnik.randomno;
 
+import android.support.test.espresso.contrib.RecyclerViewActions;
 import android.support.test.espresso.contrib.ViewPagerActions;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
 import com.nexus.nsnik.randomno.view.MainActivity;
 
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 
 @RunWith(AndroidJUnit4.class)
-public class MainActivityScreenTest {
+public class RollDiceScreenTest {
 
     @Rule
     public ActivityTestRule<MainActivity> mActivityTestRule = new ActivityTestRule<>(MainActivity.class);
 
-    @Test
+    @Before
     public void scrollToRollDiceFragment() {
         onView(withId(R.id.mainViewPager)).perform(ViewPagerActions.scrollToPage(1, true));
     }
 
     @Test
-    public void scrollToCoinTossFragment() {
-        onView(withId(R.id.mainViewPager)).perform(ViewPagerActions.scrollToPage(2, true));
+    public void rollSingleDiceTest() {
+        onView(withId(R.id.rollDice)).perform(click());
+        onView(withId(R.id.rollDiceList)).perform(RecyclerViewActions.actionOnItemAtPosition(0, click()));
+    }
+
+    @Test
+    public void rollNineDiceTest() {
+        onView(withId(R.id.rollDiceQuantity)).perform(typeText("9"));
+        onView(withId(R.id.rollDice)).perform(click());
+        onView(withId(R.id.rollDiceList)).perform(RecyclerViewActions.actionOnItemAtPosition(8, click()));
     }
 
 }

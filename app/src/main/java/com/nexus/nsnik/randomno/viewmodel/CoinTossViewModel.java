@@ -34,7 +34,7 @@ public class CoinTossViewModel extends ViewModel {
 
     private MutableLiveData<Integer> mCoinTossValue;
 
-    CoinTossViewModel() {
+    public CoinTossViewModel() {
         mCoinTossValue = new MutableLiveData<>();
     }
 
