@@ -17,6 +17,9 @@
 package com.nexus.nsnik.randomno.view.fragments;
 
 
+import android.animation.Animator;
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -69,13 +72,61 @@ public class CoinTossFragment extends Fragment {
             mResources = getActivity().getResources();
         }
         mCoinTossViewModel = ViewModelProviders.of(this).get(CoinTossViewModel.class);
-        mCoinTossViewModel.getCoinTossValue().observe(this, integer -> {
-            if (integer != null && integer == 0) {
-                mCoinText.setText(mResources.getString(R.string.coinHeads));
-                return;
+        mCoinTossViewModel.getCoinTossValue().observe(this, this::animateCoin);
+        mCoinTossViewModel.getCoinTossValue().observe(this, this::animateCoin);
+    }
+
+    private void animateCoin(Integer integer) {
+
+        float scale = mResources.getDisplayMetrics().density;
+        mCoinImage.setCameraDistance(8000 * scale);
+
+        final AnimatorSet coinFlipOut = (AnimatorSet) AnimatorInflater.loadAnimator(getActivity(), R.animator.flip_out);
+        final AnimatorSet coinFlipIn = (AnimatorSet) AnimatorInflater.loadAnimator(getActivity(), R.animator.flip_in);
+
+        final AnimatorSet textFlipOut = (AnimatorSet) AnimatorInflater.loadAnimator(getActivity(), R.animator.flip_out);
+        final AnimatorSet textFlipIn = (AnimatorSet) AnimatorInflater.loadAnimator(getActivity(), R.animator.flip_in);
+
+        coinFlipOut.setTarget(mCoinImage);
+        coinFlipIn.setTarget(mCoinImage);
+        textFlipIn.setTarget(mCoinText);
+        textFlipOut.setTarget(mCoinText);
+
+        textFlipOut.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animator) {
+
             }
-            mCoinText.setText(mResources.getString(R.string.coinTails));
+
+            @Override
+            public void onAnimationEnd(Animator animator) {
+                setCoinFace(integer);
+                coinFlipIn.start();
+                textFlipIn.start();
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animator) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animator) {
+
+            }
         });
+
+        coinFlipOut.start();
+        textFlipOut.start();
+
+    }
+
+    private void setCoinFace(Integer integer) {
+        if (integer != null && integer == 0) {
+            mCoinText.setText(mResources.getString(R.string.coinHeads));
+            return;
+        }
+        mCoinText.setText(mResources.getString(R.string.coinTails));
     }
 
     private void listener() {
@@ -87,6 +138,7 @@ public class CoinTossFragment extends Fragment {
             mUnbinder.unbind();
         }
         if (mCompositeDisposable != null) {
+            mCompositeDisposable.clear();
             mCompositeDisposable.dispose();
         }
     }

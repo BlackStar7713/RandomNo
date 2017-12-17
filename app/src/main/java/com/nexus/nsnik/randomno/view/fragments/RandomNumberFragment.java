@@ -22,6 +22,7 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -84,6 +85,7 @@ public class RandomNumberFragment extends Fragment {
         if (getActivity() != null) {
             mResources = getActivity().getResources();
         }
+        mRandomNumber.setMovementMethod(new ScrollingMovementMethod());
         mCompositeDisposable = new CompositeDisposable();
         mRandomNumberViewModel = ViewModelProviders.of(this).get(RandomNumberViewModel.class);
         mRandomNumberViewModel.getRandomNumberList().observe(this, integers -> mRandomNumber.setText(buildNumberString(integers, 0)));
@@ -130,7 +132,7 @@ public class RandomNumberFragment extends Fragment {
     @NonNull
     private String buildNumberString(List<Integer> numberList, int index) {
         if (index == numberList.size() - 1) return "" + numberList.get(index);
-        return numberList.get(index) + " , " + buildNumberString(numberList, ++index);
+        return numberList.get(index) + ", " + buildNumberString(numberList, ++index);
     }
 
     private int getQuantity() {
@@ -192,6 +194,7 @@ public class RandomNumberFragment extends Fragment {
             mUnbinder.unbind();
         }
         if (mCompositeDisposable != null) {
+            mCompositeDisposable.clear();
             mCompositeDisposable.dispose();
         }
     }

@@ -17,11 +17,11 @@
 <resources>
 
     <!-- APP-->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textColorSecondary">@color/materialBlack</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 
     <style name="stretchedHorizontally">
@@ -39,13 +39,12 @@
         <item name="android:layout_height">match_parent</item>
     </style>
 
-    <style name="button">
+    <style name="button" parent="Base.Widget.AppCompat.Button.Colored">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/buttonHeight</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/buttonTextSize</item>
-        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:colorButtonNormal">@color/colorPrimary</item>
-        <item name="android:colorControlHighlight">@color/colorAccent</item>
     </style>
 
     <!-- APP-->

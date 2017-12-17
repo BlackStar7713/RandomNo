@@ -17,23 +17,23 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@drawable/squircle" />
     <item
-        android:width="14dp"
-        android:height="14dp"
+        android:width="20dp"
+        android:height="20dp"
         android:drawable="@drawable/circle_white"
-        android:end="22dp"
+        android:end="32dp"
         android:gravity="center"
-        android:top="22dp" />
+        android:top="32dp" />
     <item
-        android:width="14dp"
-        android:height="14dp"
+        android:width="20dp"
+        android:height="20dp"
         android:drawable="@drawable/circle_white"
         android:gravity="center"
-        android:left="22dp"
-        android:top="22dp" />
+        android:left="32dp"
+        android:top="32dp" />
     <item
-        android:width="14dp"
-        android:height="14dp"
-        android:bottom="22dp"
+        android:width="20dp"
+        android:height="20dp"
+        android:bottom="32dp"
         android:drawable="@drawable/circle_white"
         android:gravity="center" />
 </layer-list>

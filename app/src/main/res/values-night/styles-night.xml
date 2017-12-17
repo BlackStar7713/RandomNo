@@ -1,4 +1,4 @@
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright 2017 nsnikhil
   ~
   ~    Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,10 +15,12 @@
   -->
 
 <resources>
-    <dimen name="sixteen">16dp</dimen>
-    <dimen name="eight">8dp</dimen>
-    <dimen name="randomTextSize">72sp</dimen>
-    <dimen name="buttonHeight">72dp</dimen>
-    <dimen name="buttonTextSize">20sp</dimen>
-    <dimen name="elevation">4dp</dimen>
+
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
 </resources>

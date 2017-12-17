@@ -23,22 +23,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.jakewharton.rxbinding2.view.RxView;
 import com.nexus.nsnik.randomno.R;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.reactivex.disposables.CompositeDisposable;
 
 public class DiceListAdapter extends RecyclerView.Adapter<DiceListAdapter.MyViewHolder> {
 
     private final Context mContext;
+    private final CompositeDisposable mCompositeDisposable;
     private List<Integer> mDiceList;
 
     public DiceListAdapter(Context context, List<Integer> diceList) {
         mContext = context;
         mDiceList = diceList;
+        mCompositeDisposable = new CompositeDisposable();
     }
 
     @Override
@@ -86,6 +91,17 @@ public class DiceListAdapter extends RecyclerView.Adapter<DiceListAdapter.MyView
         notifyDataSetChanged();
     }
 
+    private void cleanUp() {
+        mCompositeDisposable.clear();
+        mCompositeDisposable.dispose();
+    }
+
+    @Override
+    public void onDetachedFromRecyclerView(RecyclerView recyclerView) {
+        super.onDetachedFromRecyclerView(recyclerView);
+        cleanUp();
+    }
+
     class MyViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.singleDiceItem)
         ImageView mDice;
@@ -93,6 +109,7 @@ public class DiceListAdapter extends RecyclerView.Adapter<DiceListAdapter.MyView
         MyViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+            mCompositeDisposable.add(RxView.clicks(itemView).subscribe(v -> Toast.makeText(mContext, String.valueOf(mDiceList.get(getAdapterPosition())), Toast.LENGTH_SHORT).show(), Throwable::printStackTrace));
         }
     }
 }

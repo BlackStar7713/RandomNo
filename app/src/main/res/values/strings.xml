@@ -19,6 +19,25 @@
     <string name="developerEmailAddress" translatable="false">n.nikhil.ns65@gmail.com</string>
     <string name="emailSubject">Feedback for random number generator app</string>
 
+    <string-array name="pagerHeaders">
+        <item>Numbers</item>
+        <item>Dice Roll</item>
+        <item>Coin Toss</item>
+    </string-array>
+
+    <!-- prefString-->
+    <string name="prefDarkModeTitle">Dark Mode</string>
+    <string name="prefDarkModeSummary">Summary</string>
+
+    <string-array name="darkModeEntries">
+        <item>Off</item>
+        <item>On</item>
+        <item>Auto</item>
+    </string-array>
+
+    <string name="prefDarkModeKey">prefDarkModeKey</string>
+    <!-- prefString-->
+
     <!-- menu-->
     <string name="menuSettings">Settings</string>
     <string name="menuSendFeedback">Send Feedback</string>
@@ -28,9 +47,9 @@
     <string name="randomNumberStart">X</string>
     <string name="randomLowerLimitHint">From</string>
     <string name="randomUpperLimitHint">To</string>
-    <string name="randomGenerateRandomNumber">GENERATE</string>
-    <string name="randomResetFields">RESET</string>
-    <string name="randomQuantityOfNumbers">Quantity of Random Numbers</string>
+    <string name="randomGenerateRandomNumber">Generate</string>
+    <string name="randomResetFields">Reset</string>
+    <string name="randomQuantityOfNumbers">Quantity</string>
     <string name="randomGenerateNonRepeatingFlag">Non-Repeating</string>
     <string name="randomGenerateSortedFlag">Sorted</string>
 

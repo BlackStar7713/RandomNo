@@ -32,6 +32,14 @@ public class RandomGenerationUtil {
         return ThreadLocalRandom.current().nextInt(minimum, maximum + 1);
     }
 
+    /**
+     * @param minimum    the start of range
+     * @param maximum    the end of range
+     * @param quantity   the quantity of numbers you want to generate
+     * @param willRepeat can same number be generated
+     * @param isSorted   will be sorted
+     * @return the range numbers between minimum and maximum
+     */
     public static List<Integer> generateRandomNumbers(int minimum, int maximum, int quantity, boolean willRepeat, boolean isSorted) {
         List<Integer> numberList = new ArrayList<>();
         for (int i = 0; i < quantity; i++) {
@@ -47,6 +55,11 @@ public class RandomGenerationUtil {
         return numberList;
     }
 
+    /**
+     * @param number    the number
+     * @param list      the list of numbers
+     * @return true if number dose not exits in list
+     */
     private static boolean checkIfRepetitionExists(int number, List<Integer> list) {
         return list.indexOf(number) != -1;
     }

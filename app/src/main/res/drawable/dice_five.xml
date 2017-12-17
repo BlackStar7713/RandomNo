@@ -17,38 +17,38 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@drawable/squircle" />
     <item
-        android:width="12dp"
-        android:height="12dp"
+        android:width="18dp"
+        android:height="18dp"
         android:drawable="@drawable/circle_white"
-        android:end="28dp"
+        android:end="38dp"
         android:gravity="center"
-        android:top="28dp" />
+        android:top="38dp" />
     <item
-        android:width="12dp"
-        android:height="12dp"
+        android:width="18dp"
+        android:height="18dp"
         android:drawable="@drawable/circle_white"
         android:gravity="center"
-        android:left="28dp"
-        android:top="28dp" />
+        android:left="38dp"
+        android:top="38dp" />
     <item
-        android:width="12dp"
-        android:height="12dp"
-        android:bottom="28dp"
+        android:width="18dp"
+        android:height="18dp"
+        android:bottom="38dp"
         android:drawable="@drawable/circle_white"
         android:gravity="center"
-        android:left="28dp" />
+        android:left="38dp" />
 
     <item
-        android:width="12dp"
-        android:height="12dp"
-        android:bottom="28dp"
+        android:width="18dp"
+        android:height="18dp"
+        android:bottom="38dp"
         android:drawable="@drawable/circle_white"
         android:gravity="center"
-        android:right="28dp" />
+        android:right="38dp" />
 
     <item
-        android:width="12dp"
-        android:height="12dp"
+        android:width="18dp"
+        android:height="18dp"
         android:drawable="@drawable/circle_white"
         android:gravity="center" />
 </layer-list>

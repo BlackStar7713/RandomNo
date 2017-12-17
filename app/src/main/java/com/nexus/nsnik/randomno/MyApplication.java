@@ -19,7 +19,9 @@ package com.nexus.nsnik.randomno;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.StrictMode;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatDelegate;
 
@@ -43,6 +45,7 @@ public class MyApplication extends Application {
 
     @Override
     public void onCreate() {
+        setTheme();
         super.onCreate();
         if (BuildConfig.DEBUG) {
             Timber.plant(new Timber.DebugTree() {
@@ -63,13 +66,24 @@ public class MyApplication extends Application {
                     .build());
         }
         if (LeakCanary.isInAnalyzerProcess(this)) {
-            return;
         }
-        moduleSetter();
     }
 
-    private void moduleSetter() {
-
+    private void setTheme() {
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        String mode = sharedPreferences.getString(getResources().getString(R.string.prefDarkModeKey), "Default");
+        switch (mode) {
+            case "On":
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                break;
+            case "Off":
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                break;
+            case "Auto":
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO);
+                break;
+            default:
+                throw new IllegalArgumentException("Invalid mode :" + mode);
+        }
     }
-
 }

@@ -27,7 +27,7 @@ import com.nexus.nsnik.randomno.view.fragments.RollDiceFragment;
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
-    private static final CharSequence[] ab = {"Numbers", "Dice Roll", " Coin Toss"};
+    private static final CharSequence[] PAGER_HEADERS = {"Numbers", "Dice Roll", "Coin Toss"};
 
     public ViewPagerAdapter(FragmentManager fm) {
         super(fm);
@@ -56,11 +56,11 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
     public CharSequence getPageTitle(int position) {
         switch (position) {
             case 0:
-                return ab[0];
+                return PAGER_HEADERS[0];
             case 1:
-                return ab[1];
+                return PAGER_HEADERS[1];
             case 2:
-                return ab[2];
+                return PAGER_HEADERS[2];
             default:
                 throw new IllegalArgumentException("Invalid position : " + position);
         }

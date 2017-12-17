@@ -101,6 +101,7 @@ public class RollDiceFragment extends Fragment {
             mUnbinder.unbind();
         }
         if (mCompositeDisposable != null) {
+            mCompositeDisposable.clear();
             mCompositeDisposable.dispose();
         }
     }

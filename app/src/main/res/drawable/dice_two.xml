@@ -17,15 +17,15 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@drawable/squircle" />
     <item
-        android:width="16dp"
-        android:height="16dp"
+        android:width="26dp"
+        android:height="26dp"
         android:drawable="@drawable/circle_white"
-        android:end="22dp"
+        android:end="32dp"
         android:gravity="center" />
     <item
-        android:width="16dp"
-        android:height="16dp"
+        android:width="26dp"
+        android:height="26dp"
         android:drawable="@drawable/circle_white"
         android:gravity="center"
-        android:left="22dp" />
+        android:left="32dp" />
 </layer-list>

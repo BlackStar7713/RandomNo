@@ -16,9 +16,7 @@
 
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/matchParent"
-    android:orientation="vertical"
-    android:padding="@dimen/sixteen">
+    style="@style/matchParent">
 
     <ImageView
         android:id="@+id/coinImage"

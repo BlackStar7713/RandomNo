@@ -1,4 +1,4 @@
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright 2017 nsnikhil
   ~
   ~    Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,10 +15,6 @@
   -->
 
 <resources>
-    <dimen name="sixteen">16dp</dimen>
-    <dimen name="eight">8dp</dimen>
-    <dimen name="randomTextSize">72sp</dimen>
-    <dimen name="buttonHeight">72dp</dimen>
-    <dimen name="buttonTextSize">20sp</dimen>
-    <dimen name="elevation">4dp</dimen>
+    <integer name="anim_length">300</integer>
+    <integer name="anim_length_half">150</integer>
 </resources>

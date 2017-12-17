@@ -16,7 +16,10 @@
 
 <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/singleDiceItem"
-    style="@style/wrapContent"
+    style="@style/stretchedHorizontally"
+    android:background="?selectableItemBackgroundBorderless"
+    android:clickable="true"
     android:contentDescription="@string/app_name"
+    android:focusable="true"
     android:padding="@dimen/sixteen"
     android:src="@drawable/dice_one" />
