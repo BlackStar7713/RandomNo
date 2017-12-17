@@ -10,8 +10,8 @@ android {
         applicationId "com.nexus.nsnik.randomno"
         minSdkVersion 24
         targetSdkVersion 27
-        versionCode 8
-        versionName "2.3"
+        versionCode 9
+        versionName "3.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         /*splits {
             abi {

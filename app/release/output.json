@@ -1,0 +1,18 @@
+[
+  {
+    "outputType": {
+      "type": "APK"
+    },
+    "apkInfo": {
+      "type": "MAIN",
+      "splits": [],
+      "versionCode": 9
+    },
+    "path": "app-release.apk",
+    "properties": {
+      "packageId": "com.nexus.nsnik.randomno",
+      "split": "",
+      "minSdkVersion": "24"
+    }
+  }
+]
