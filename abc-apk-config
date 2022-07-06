@@ -8,3 +8,9 @@ make_assemble_android_test_command = assembleAndroidTest
 make_test_runner = com.nexus.nsnik.randomno.test/androidx.test.runner.AndroidJUnitRunner
 make_espresso_coverage_file_path = app/build/outputs/code_coverage/debugAndroidTest/connected/*coverage.ec
 make_permissions =
+make_trace_multiple_threads = false
+make_carving_filter_methods = 
+make_instr_skip_classes = 
+make_instr_filter_packages = 
+make_instr_filter_classes = 
+
