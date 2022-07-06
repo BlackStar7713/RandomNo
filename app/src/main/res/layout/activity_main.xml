@@ -23,12 +23,12 @@
         android:id="@+id/mainToolbar"
         layout="@layout/toolbar" />
 
-    <android.support.design.widget.TabLayout
+    <com.google.android.material.tabs.TabLayout
         android:id="@+id/mainTabLayout"
         style="@style/toolbar"
         app:layout_constraintTop_toBottomOf="@id/mainToolbar" />
 
-    <androidx.core.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/mainViewPager"
         style="@style/stretchedHorizontally" />
 
