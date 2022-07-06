@@ -18,7 +18,7 @@ package com.nexus.nsnik.randomno.view;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.nexus.nsnik.randomno.BuildConfig;
 import com.nexus.nsnik.randomno.MyApplication;

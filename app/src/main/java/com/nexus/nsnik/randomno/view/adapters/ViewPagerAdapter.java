@@ -16,9 +16,9 @@
 
 package com.nexus.nsnik.randomno.view.adapters;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
+import androidx.core.app.Fragment;
+import androidx.core.app.FragmentManager;
+import androidx.core.app.FragmentStatePagerAdapter;
 
 import com.nexus.nsnik.randomno.view.fragments.CoinTossFragment;
 import com.nexus.nsnik.randomno.view.fragments.RandomNumberFragment;

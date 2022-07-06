@@ -16,7 +16,7 @@
 
 package com.nexus.nsnik.randomno.model;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.google.auto.value.AutoValue;
 

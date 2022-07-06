@@ -22,8 +22,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.StrictMode;
 import android.preference.PreferenceManager;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatDelegate;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import com.github.moduth.blockcanary.BlockCanary;
 import com.nexus.nsnik.randomno.util.AppBlockCanaryContext;
