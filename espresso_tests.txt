@@ -1,0 +1,10 @@
+com.nexus.nsnik.randomno.RollDiceScreenTest rollSingleDiceTest
+com.nexus.nsnik.randomno.RollDiceScreenTest rollNineDiceTest
+com.nexus.nsnik.randomno.MainActivityScreenTest scrollToRollDiceFragment
+com.nexus.nsnik.randomno.MainActivityScreenTest scrollToCoinTossFragment
+com.nexus.nsnik.randomno.RandomNumberScreenTest resetAllFieldsAndFlagsTest
+com.nexus.nsnik.randomno.RandomNumberScreenTest generateTenNonRepeatingRandomNumbersTest
+com.nexus.nsnik.randomno.RandomNumberScreenTest generateSingleRandomNumberTest
+com.nexus.nsnik.randomno.RandomNumberScreenTest generateTenNonRepeatingSortedRandomNumbersTest
+com.nexus.nsnik.randomno.RandomNumberScreenTest generateTenRandomNumbersTest
+com.nexus.nsnik.randomno.CoinTossScreenTest coinTestTest
