@@ -254,6 +254,9 @@ dependencies {
 
     //ROBO-ELECTRIC
     testImplementation "org.robolectric:robolectric:$rootProject.roboElectricVersion"
+
+
+    testImplementation 'androidx.test:core:1.3.0'
 }
 
 apply plugin: 'com.google.gms.google-services'

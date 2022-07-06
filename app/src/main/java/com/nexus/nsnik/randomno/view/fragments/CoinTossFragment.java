@@ -24,7 +24,7 @@ import androidx.lifecycle.ViewModelProviders;
 import android.content.res.Resources;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
-import androidx.core.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
