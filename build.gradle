@@ -65,7 +65,7 @@ ext {
 
     timberVersion = "4.6.0"
 
-    butterKnifeVersion = "8.8.1"
+    butterKnifeVersion = "10.2.0"
 
     leakCanaryVersion = "1.5.4"
 
